@@ -1,20 +1,28 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/sequelize.js";
 
-const Role = sequelize.define('Role', {
-    role_id: {
+const RolePermission = sequelize.define('RolePermission', {
+    role_permission_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       unique: true
     },
-    name: {
-      type: DataTypes.STRING(45),
-      allowNull: false
+    role_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'roles',
+        key: 'role_id'
+      }
     },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: true
+    permission_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'permissions',
+        key: 'permission_id'
+      }
     },
     status: {
       type: DataTypes.BOOLEAN,
@@ -27,9 +35,9 @@ const Role = sequelize.define('Role', {
       defaultValue: DataTypes.NOW
     }
   }, {
-    tableName: 'roles',
+    tableName: 'roles_permissions',
     timestamps: false,
     underscored: true
   });
 
-export default Role; 
+export default RolePermission; 
