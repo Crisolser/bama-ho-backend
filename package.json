@@ -1,0 +1,26 @@
+{
+  "name": "bama-ho-backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "homepage": "https://github.com/Crisolser/bama-ho-backend#readme",
+  "bugs": {
+    "url": "https://github.com/Crisolser/bama-ho-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crisolser/bama-ho-backend.git"
+  },
+  "license": "ISC",
+  "author": "Cristian Olmedo Serrano",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "sequelize": "^6.37.7"
+  }
+}
