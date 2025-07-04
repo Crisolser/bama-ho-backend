@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../database/dbsequelize.mjs";
+import sequelize from "../config/sequelize.js";
 
 const AdminRole = sequelize.define('AdminRole', {
     admin_role_id: {

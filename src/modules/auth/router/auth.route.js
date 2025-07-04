@@ -1,0 +1,7 @@
+import { Router } from "express";
+import { methods as Auth } from "../controller/auth.controller.js"
+
+const router = Router();
+router.post("/",Auth.getUserToken);
+
+export default router;

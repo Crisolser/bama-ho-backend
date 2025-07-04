@@ -7,7 +7,13 @@ const { DBHOST, DBPORT, DATABASE, DBUSER, DBPASSWORD } = process.env;
 const sequelize = new Sequelize(DATABASE, DBUSER, DBPASSWORD, {
     host: DBHOST,
     port: DBPORT,
-    dialect: "mysql",
+    dialect: "postgres",
+    dialectOptions: {
+    ssl: {
+        require: true,
+        rejectUnauthorized: false // ⚠️ solo si no tienes certificado verificado
+        }
+    },
     logging: false,
 });
 
