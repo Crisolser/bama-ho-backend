@@ -1,7 +1,7 @@
 import { methods as User } from "../service/auth.service.js"
 import { methods as Response } from "./../../../helpers/response.handler.js";
 
-const getUserToken = async (req, res) => {
+const getUserToken = async (req, res, next) => {
   try {
     const token = await User.getToken(req.body)
     const message = "Token generado"
@@ -11,8 +11,7 @@ const getUserToken = async (req, res) => {
     return;
   } 
   catch (error) {
-    Response.errorHandler(req,res,error);
-    return;
+    next(error)
   }
 };
 

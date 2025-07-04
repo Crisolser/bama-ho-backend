@@ -5,6 +5,7 @@ import AdminRole from "../models/admin.role.model.js";
 import Permission from "../models/permission.model.js";
 import Role from "../models/role.model.js";
 import RolePermission from "../models/role.permission.model.js";
+import "../models/associations/index.js";
 import createInitialData from "./seeders/initial.data.js";
 
 const syncDatabase = async () => {

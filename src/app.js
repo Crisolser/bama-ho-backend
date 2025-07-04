@@ -17,12 +17,13 @@ app.use(syntaxError);
 //Principal routes
 app.use("/api", AllRoutes);
 
-//Error handler
+//Not Fount handler
 app.use("/", (req, res) => {
     res.status(404).json({
         message: "Route not found",
     });
 });
+//Error handler
 app.use(errorHandler);
 
 

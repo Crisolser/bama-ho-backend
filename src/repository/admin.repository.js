@@ -163,34 +163,6 @@ const getRolePermisions = async (adminId) => {
     return permisions
 }
 
-const uploadProfilePhoto = async (adminId,inputFile) => {
-    const {name, file, type} = inputFile
-    const s3Input = {
-      Bucket: process.env.BUCKET_NAME,
-      Key: "admin_profile_photos/" + name,
-      Body: file,
-      ContentType: type,
-      ACL: "public-read",
-    };
-  
-    await s3.send(new PutObjectCommand(s3Input));
-    await Admin.update(
-        {profile_photo:name},
-        {where:{admin_id:adminId}}
-    )
-    return
-};
-
-const deleteProfilePhoto = async (fileName) => {
-    const s3Input = {
-      Bucket: process.env.BUCKET_NAME,
-      Key: "admin_profile_photos/" + fileName,
-    };
-  
-    await s3.send(new DeleteObjectCommand(s3Input));
-    return
-};
-
 export const methods = {
     findOne,
     findOneByEmail,
@@ -203,7 +175,5 @@ export const methods = {
     setPermissions,
     getRolePermisions,
     getRoles,
-    setRoles,
-    uploadProfilePhoto,
-    deleteProfilePhoto
+    setRoles
 }
