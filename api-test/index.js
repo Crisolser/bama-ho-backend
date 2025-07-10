@@ -1,6 +1,6 @@
-import app from "./app.js";
+import app from "./src/app.js";
 import dotenv from "dotenv";
-import syncDatabase from "./config/sync.js";
+import syncDatabase from "./src/config/sync.js";
 dotenv.config();
 
 const Puerto = process.env.APPPORT || 4001;

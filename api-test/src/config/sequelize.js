@@ -9,9 +9,9 @@ const sequelize = new Sequelize(DATABASE, DBUSER, DBPASSWORD, {
     port: DBPORT,
     dialect: "postgres",
     dialectOptions: {
-    ssl: {
-        require: true,
-        rejectUnauthorized: false // ⚠️ solo si no tienes certificado verificado
+        ssl: {
+            require: true,
+            rejectUnauthorized: false // ⚠️ solo si no tienes certificado verificado
         }
     },
     logging: false,

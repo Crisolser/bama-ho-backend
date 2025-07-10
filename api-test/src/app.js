@@ -13,6 +13,16 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(syntaxError);
+app.use((req, res, next) => {
+  if (Buffer.isBuffer(req.body)) {
+    try {
+      req.body = JSON.parse(req.body.toString());
+    } catch (e) {
+      console.error('Error al parsear body buffer:', e);
+    }
+  }
+  next();
+});
 
 //Principal routes
 app.use("/api", AllRoutes);
