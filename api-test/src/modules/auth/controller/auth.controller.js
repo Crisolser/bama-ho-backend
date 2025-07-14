@@ -3,8 +3,6 @@ import { methods as Response } from "../../../helpers/response.handler.js";
 
 const getUserToken = async (req, res, next) => {
   try {
-    console.log("imprimir req")
-    console.log(req)
     const token = await UserService.createToken(req.body)
     const message = "Token generado"
     const additionalData = token
