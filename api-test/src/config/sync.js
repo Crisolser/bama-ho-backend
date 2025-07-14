@@ -6,11 +6,11 @@ import createInitialData from "./seeders/initial.data.js";
 const syncDatabase = async () => {
   try {
     // Sync models with the database
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
     console.log("Database synchronized successfully.");
     await sequelize.authenticate();
     console.log("Database connection established successfully.");
-    await createInitialData();
+    //await createInitialData();
   } catch (error) {
     console.error("Error synchronizing the database:", error);
   }

@@ -53,5 +53,6 @@ const Admin = sequelize.define('Admin', {
     underscored: true
   });
 
+  
 
 export default Admin; 
