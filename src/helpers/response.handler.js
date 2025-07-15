@@ -14,6 +14,5 @@ const successHandler = async (req,res,{message,additionalData,statusCode}) => {
 
 
 export const methods = {
-  successHandler,
-  errorHandler,
+  successHandler
 };
