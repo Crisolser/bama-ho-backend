@@ -29,9 +29,9 @@ app.use("/", (req, res) => {
     });
 });
 
-app.use(AWSXRay.express.closeSegment());
 //Error handler
 app.use(errorHandler);
 
+app.use(AWSXRay.express.closeSegment());
 
 export default app;
