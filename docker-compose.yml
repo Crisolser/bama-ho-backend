@@ -5,12 +5,26 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: pos-api
+    container_name: head-office-api
     restart: always
     ports:
       - "5001:5001"
     env_file:
       - .env
+    environment:
+      - AWS_XRAY_DAEMON_ADDRESS=xray:2000
     volumes:
       - .:/app
       - /app/node_modules
+    depends_on:
+      - xray
+
+  xray:
+    image: amazon/aws-xray-daemon
+    container_name: xray
+    restart: always
+    ports:
+      - "2000:2000/udp"
+    env_file:
+      - .env
+    command: -o

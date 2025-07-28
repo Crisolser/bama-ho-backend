@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import logger from "../config/logger.js";
 dotenv.config();
 
 const successHandler = async (req,res,{message,additionalData,statusCode}) => {
@@ -7,7 +8,13 @@ const successHandler = async (req,res,{message,additionalData,statusCode}) => {
     message,
     ...additionalData
   }
-
+  logger.info(JSON.stringify({
+    method: req.method,
+    originalUrl: req.originalUrl,
+    ip: req.ip,
+    body: req.body,
+    headers: req.headers
+  }));
   res.status(statusCode).json(response);
   return;
 };
