@@ -1,6 +1,6 @@
-import Role from "../../models/role.model.js"
-import Permission from "../../models/permission.model.js";
-import Admin from "../../models/admin.model.js";
+import Role from "../../models/role-model.js"
+import Permission from "../../models/permission-model.js";
+import Admin from "../../models/admin-model.js";
 
 const createInitialData = async () => {
   try {

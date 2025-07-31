@@ -1,5 +1,5 @@
-import { methods as UserService } from "../service/auth.service.js"
-import { methods as Response } from "../../../helpers/response.handler.js";
+import { methods as UserService } from "../service/auth-service.js"
+import { methods as Response } from "../../../helpers/response-handler.js";
 
 const getUserToken = async (req, res, next) => {
   try {

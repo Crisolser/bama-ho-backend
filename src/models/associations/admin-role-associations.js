@@ -1,6 +1,6 @@
-import Admin from "../admin.model.js";
-import Role from "../role.model.js";
-import AdminRole from "../admin.role.model.js";
+import Admin from "../admin-model.js";
+import Role from "../role-model.js";
+import AdminRole from "../admin-role-model.js";
 
 AdminRole.belongsTo(Role, {
   foreignKey: 'role_id',

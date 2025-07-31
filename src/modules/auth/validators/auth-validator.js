@@ -1,4 +1,4 @@
-import error from "../../../helpers/error.constructor.js";
+import error from "../../../helpers/error-constructor.js";
 
 function loginParameters(credentials) {
   const {email,password} = credentials

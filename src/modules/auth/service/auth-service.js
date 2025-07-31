@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import { methods as AdminRepository } from "../../../repository/admin.repository.js";
-import { methods as Validator } from "../validators/auth.validator.js"
-import error from "../../../helpers/error.constructor.js";
+import { methods as AdminRepository } from "../../../repository/admin-repository.js";
+import { methods as Validator } from "../validators/auth-validator.js"
+import error from "../../../helpers/error-constructor.js";
 dotenv.config()
 
 const createToken = async (credentials) => {

@@ -3,8 +3,8 @@ import cors from "cors";
 import morgan from "morgan";
 import AWSXRay from "aws-xray-sdk";
 import http from "http";
-import syntaxError from "./middleware/syntax.error.js";
-import errorHandler from "./middleware/general.error.js";
+import syntaxError from "./middleware/syntax-error.js";
+import errorHandler from "./middleware/general-error.js";
 import AllRoutes from "./routes.js";
 
 const app = express();

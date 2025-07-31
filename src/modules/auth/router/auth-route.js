@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { methods as Auth } from "../controller/auth.controller.js"
+import { methods as Auth } from "../controller/auth-controller.js"
 
 const router = Router();
 router.post("/",Auth.getUserToken);

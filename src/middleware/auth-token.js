@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import error from "../helpers/error.constructor.js";
+import error from "../helpers/error-constructor.js";
 
 dotenv.config();
 

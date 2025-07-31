@@ -8,12 +8,6 @@ const sequelize = new Sequelize(DATABASE, DBUSER, DBPASSWORD, {
     host: DBHOST,
     port: DBPORT,
     dialect: "postgres",
-    dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false // ⚠️ solo si no tienes certificado verificado
-        }
-    },
     pool: {
         max: 15,
         min: 5,

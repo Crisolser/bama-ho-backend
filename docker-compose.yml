@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   api:
     build:
@@ -11,13 +9,12 @@ services:
       - "5001:5001"
     env_file:
       - .env
-    environment:
-      - AWS_XRAY_DAEMON_ADDRESS=xray:2000
     volumes:
       - .:/app
       - /app/node_modules
     depends_on:
       - xray
+      - postgres
 
   xray:
     image: amazon/aws-xray-daemon
@@ -28,3 +25,21 @@ services:
     env_file:
       - .env
     command: -o
+
+  postgres:
+    image: postgres:16
+    container_name: postgres-db
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${DBUSER}
+      - POSTGRES_PASSWORD=${DBPASSWORD}
+      - POSTGRES_DB=${DATABASE}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

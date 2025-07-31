@@ -1,6 +1,6 @@
-import Role from "../role.model.js";
-import Permission from "../permission.model.js";
-import RolePermission from "../role.permission.model.js";
+import Role from "../role-model.js";
+import Permission from "../permission-model.js";
+import RolePermission from "../role-permission-model.js";
 
 RolePermission.belongsTo(Role, {
   foreignKey: 'role_id',

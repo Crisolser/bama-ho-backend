@@ -1,10 +1,10 @@
 import dotenv from "dotenv";
 import { QueryTypes } from "sequelize";
 import sequelize from "../config/sequelize.js";
-import Admin from "../models/admin.model.js";
-import AdminPermission from "../models/admin.permission.model.js";
-import AdminRole from "../models/admin.role.model.js";
-import Role from "../models/role.model.js";
+import Admin from "../models/admin-model.js";
+import AdminPermission from "../models/admin-permission-model.js";
+import AdminRole from "../models/admin-role-model.js";
+import Role from "../models/role-model.js";
 dotenv.config()
 
 const getByCredentials = async (credentials) => {

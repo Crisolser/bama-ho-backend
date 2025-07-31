@@ -1,7 +1,7 @@
 import { Router } from "express";
-import AuthRouter from "./modules/auth/router/auth.route.js";
-import { methods as Auth } from "./middleware/auth.token.js";
-import { methods as Response } from "./helpers/response.handler.js" 
+import AuthRouter from "./modules/auth/router/auth-route.js";
+import { methods as Auth } from "./middleware/auth-token.js";
+import { methods as Response } from "./helpers/response-handler.js" 
 
 const router = Router();
 
